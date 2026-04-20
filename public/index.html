@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Marketplace - Find Services Instantly</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(102,126,234,0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(240,147,251,0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 20%, rgba(118,75,162,0.1) 0%, transparent 50%);
+            animation: gradientShift 15s ease infinite;
+            z-index: -1;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 25px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #667eea, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-btn {
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border: none;
+            border-radius: 25px;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102,126,234,0.4);
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 60px 60px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 8vw, 96px);
+            font-weight: 900;
+            margin-bottom: 30px;
+            line-height: 1.1;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #fff 0%, #667eea 50%, #f093fb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: gradientMove 3s ease infinite;
+        }
+
+        @keyframes gradientMove {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero p {
+            font-size: clamp(18px, 3vw, 24px);
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 50px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 50px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border: none;
+            border-radius: 50px;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            animation: fadeInUp 1.2s ease;
+            box-shadow: 0 20px 60px rgba(102,126,234,0.3);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 80px rgba(102,126,234,0.5);
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 100px 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: clamp(36px, 5vw, 64px);
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .workflow {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .step {
+            position: relative;
+            padding: 40px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 30px;
+            transition: all 0.4s;
+            animation: fadeInUp 0.8s ease;
+            animation-fill-mode: both;
+        }
+
+        .step:nth-child(1) { animation-delay: 0.1s; }
+        .step:nth-child(2) { animation-delay: 0.2s; }
+        .step:nth-child(3) { animation-delay: 0.3s; }
+        .step:nth-child(4) { animation-delay: 0.4s; }
+        .step:nth-child(5) { animation-delay: 0.5s; }
+
+        .step:hover {
+            background: rgba(255,255,255,0.05);
+            transform: translateY(-10px);
+            border-color: rgba(102,126,234,0.3);
+            box-shadow: 0 20px 60px rgba(102,126,234,0.2);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 900;
+            margin-bottom: 25px;
+        }
+
+        .step-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .step-desc {
+            color: rgba(255,255,255,0.6);
+            line-height: 1.8;
+        }
+
+        /* Demo Section */
+        .demo-section {
+            padding: 100px 60px;
+            background: rgba(255,255,255,0.02);
+        }
+
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .demo-content h2 {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 900;
+            margin-bottom: 30px;
+        }
+
+        .demo-content p {
+            font-size: 18px;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .phone-mockup {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .phone {
+            background: #1a1a1a;
+            border-radius: 50px;
+            padding: 20px;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.5);
+            border: 8px solid #2a2a2a;
+        }
+
+        .phone-screen {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 40px;
+            padding: 40px 25px;
+            min-height: 600px;
+            overflow: hidden;
+        }
+
+        .chat-message {
+            background: rgba(255,255,255,0.95);
+            color: #000;
+            padding: 15px 20px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            max-width: 85%;
+            animation: slideIn 0.5s ease;
+            animation-fill-mode: both;
+        }
+
+        .chat-message.bot {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            margin-left: 0;
+        }
+
+        .chat-message.user {
+            background: #fff;
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .chat-message:nth-child(1) { animation-delay: 0.5s; }
+        .chat-message:nth-child(2) { animation-delay: 1.5s; }
+        .chat-message:nth-child(3) { animation-delay: 2.5s; }
+        .chat-message:nth-child(4) { animation-delay: 3.5s; }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Stats */
+        .stats-section {
+            padding: 100px 60px;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+
+        .stat-card {
+            padding: 40px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+
+        .stat-card:hover {
+            background: rgba(255,255,255,0.05);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 56px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #667eea, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .stat-label {
+            color: rgba(255,255,255,0.6);
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 120px 60px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(102,126,234,0.1), rgba(240,147,251,0.1));
+        }
+
+        .cta-section h2 {
+            font-size: clamp(36px, 5vw, 64px);
+            font-weight: 900;
+            margin-bottom: 30px;
+        }
+
+        .cta-section p {
+            font-size: 20px;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 50px;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            nav {
+                padding: 20px 30px;
+            }
+
+            .hero, .how-it-works, .demo-section, .stats-section, .cta-section {
+                padding: 80px 30px;
+            }
+
+            .demo-container {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .workflow {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <nav>
+        <div class="logo">🤖 AI Marketplace</div>
+        <button class="nav-btn" onclick="window.location.href='/admin'">Dashboard</button>
+    </nav>
+
+    <section class="hero">
+        <div>
+            <h1 class="gradient-text">Find Services in Seconds</h1>
+            <p>Chat naturally on Telegram, get AI-powered recommendations, pay instantly</p>
+            <a href="https://t.me/whatsapp_locus_bot" class="cta-btn" target="_blank">
+                <span>🚀</span>
+                Try Bot Now
+            </a>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <h2 class="section-title gradient-text">How It Works</h2>
+        
+        <div class="workflow">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3 class="step-title">Send Message</h3>
+                <p class="step-desc">Open Telegram and chat naturally: "I need a logo under ₹500"</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3 class="step-title">AI Understands</h3>
+                <p class="step-desc">Groq AI analyzes your message and extracts service type, budget, requirements</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3 class="step-title">Get Options</h3>
+                <p class="step-desc">Instantly receive 2-3 best matching services with prices and ratings</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3 class="step-title">Select & Pay</h3>
+                <p class="step-desc">Choose your preferred option and complete payment securely</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">5</div>
+                <h3 class="step-title">Get Confirmed</h3>
+                <p class="step-desc">Receive instant confirmation on Telegram with order details</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="demo-section">
+        <div class="demo-container">
+            <div class="demo-content">
+                <h2 class="gradient-text">See It In Action</h2>
+                <p>Watch how a simple conversation turns into a completed transaction in under 60 seconds. No apps to download, no complicated forms - just natural chat.</p>
+                <a href="https://t.me/whatsapp_locus_bot" class="cta-btn" target="_blank">
+                    <span>💬</span>
+                    Start Chatting
+                </a>
+            </div>
+
+            <div class="phone-mockup">
+                <div class="phone">
+                    <div class="phone-screen">
+                        <div class="chat-message user">
+                            I need a logo under ₹500
+                        </div>
+                        <div class="chat-message bot">
+                            Great! I found 2 options:<br><br>
+                            1. Creative Studio<br>
+                            💰 ₹499 | ⭐ 4.8/5<br><br>
+                            2. Quick Logo<br>
+                            💰 ₹299 | ⭐ 4.5/5
+                        </div>
+                        <div class="chat-message user">
+                            1
+                        </div>
+                        <div class="chat-message bot">
+                            🎉 Payment link sent!<br>
+                            Order confirmed instantly ⚡
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <h2 class="section-title gradient-text">Powered by AI</h2>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-number">10+</span>
+                <span class="stat-label">Services</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">&lt;60s</span>
+                <span class="stat-label">Transaction Time</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">AI</span>
+                <span class="stat-label">Powered</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">$0</span>
+                <span class="stat-label">Setup Cost</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2 class="gradient-text">Ready to Get Started?</h2>
+        <p>Join thousands of users finding services instantly with AI</p>
+        <a href="https://t.me/whatsapp_locus_bot" class="cta-btn" target="_blank">
+            <span>🚀</span>
+            Try Bot Now - It's Free
+        </a>
+    </section>
+</body>
+</html>

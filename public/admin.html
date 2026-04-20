@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - AI Marketplace</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 40px 60px;
+            box-shadow: 0 10px 40px rgba(102,126,234,0.3);
+        }
+
+        .header h1 {
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 16px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 25px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .back-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 40px 60px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(102,126,234,0.1), rgba(118,75,162,0.1));
+            padding: 35px;
+            border-radius: 25px;
+            border: 1px solid rgba(102,126,234,0.2);
+            transition: all 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(102,126,234,0.2);
+        }
+
+        .stat-label {
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .stat-value {
+            font-size: 48px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #667eea, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section {
+            background: rgba(255,255,255,0.02);
+            border-radius: 25px;
+            padding: 40px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 800;
+        }
+
+        .refresh-btn {
+            padding: 10px 25px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border: none;
+            border-radius: 20px;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .refresh-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102,126,234,0.4);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: rgba(255,255,255,0.05);
+            padding: 18px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        td {
+            padding: 20px 18px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        tr:hover {
+            background: rgba(255,255,255,0.02);
+        }
+
+        .status {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .status.paid {
+            background: rgba(76,175,80,0.2);
+            color: #4caf50;
+        }
+
+        .status.pending {
+            background: rgba(255,193,7,0.2);
+            color: #ffc107;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 60px;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .empty {
+            text-align: center;
+            padding: 60px;
+            color: rgba(255,255,255,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .header, .container {
+                padding: 30px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            table {
+                font-size: 14px;
+            }
+
+            th, td {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📊 Admin Dashboard</h1>
+        <p>Monitor orders, users, and system performance in real-time</p>
+        <a href="/" class="back-btn">← Back to Home</a>
+    </div>
+
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Total Orders</div>
+                <div class="stat-value" id="total-orders">-</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Total Users</div>
+                <div class="stat-value" id="total-users">-</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Total Sellers</div>
+                <div class="stat-value" id="total-sellers">-</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Total Revenue</div>
+                <div class="stat-value" id="total-revenue">₹0</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Recent Orders</h2>
+                <button class="refresh-btn" onclick="loadOrders()">🔄 Refresh</button>
+            </div>
+            <div id="orders-table">
+                <div class="loading">Loading orders...</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Recent Users</h2>
+                <button class="refresh-btn" onclick="loadUsers()">🔄 Refresh</button>
+            </div>
+            <div id="users-table">
+                <div class="loading">Loading users...</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Top Sellers</h2>
+                <button class="refresh-btn" onclick="loadSellers()">🔄 Refresh</button>
+            </div>
+            <div id="sellers-table">
+                <div class="loading">Loading sellers...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function loadStats() {
+            try {
+                const response = await fetch('/api/admin/stats');
+                const data = await response.json();
+                
+                if (data.success) {
+                    document.getElementById('total-orders').textContent = data.stats.totalOrders;
+                    document.getElementById('total-users').textContent = data.stats.totalUsers;
+                    document.getElementById('total-sellers').textContent = data.stats.totalSellers;
+                    document.getElementById('total-revenue').textContent = '₹' + data.stats.totalRevenue.toLocaleString();
+                }
+            } catch (error) {
+                console.error('Error loading stats:', error);
+            }
+        }
+
+        async function loadOrders() {
+            const container = document.getElementById('orders-table');
+            container.innerHTML = '<div class="loading">Loading orders...</div>';
+            
+            try {
+                const response = await fetch('/api/admin/orders');
+                const data = await response.json();
+                
+                if (data.success && data.orders.length > 0) {
+                    container.innerHTML = `
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Service</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${data.orders.map(order => `
+                                    <tr>
+                                        <td><strong>${order.orderId}</strong></td>
+                                        <td>${order.userId?.name || 'Unknown'}</td>
+                                        <td>${order.sellerId?.service || 'N/A'}</td>
+                                        <td><strong>₹${order.amount}</strong></td>
+                                        <td><span class="status ${order.status}">${order.status}</span></td>
+                                        <td>${new Date(order.createdAt).toLocaleDateString()}</td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    `;
+                } else {
+                    container.innerHTML = '<div class="empty">No orders yet</div>';
+                }
+            } catch (error) {
+                container.innerHTML = '<div class="empty">Error loading orders</div>';
+                console.error('Error loading orders:', error);
+            }
+        }
+
+        async function loadUsers() {
+            const container = document.getElementById('users-table');
+            container.innerHTML = '<div class="loading">Loading users...</div>';
+            
+            try {
+                const response = await fetch('/api/admin/users');
+                const data = await response.json();
+                
+                if (data.success && data.users.length > 0) {
+                    container.innerHTML = `
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Phone</th>
+                                    <th>Messages</th>
+                                    <th>Joined</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${data.users.map(user => `
+                                    <tr>
+                                        <td><strong>${user.name}</strong></td>
+                                        <td>${user.phone}</td>
+                                        <td>${user.history?.length || 0}</td>
+                                        <td>${new Date(user.createdAt).toLocaleDateString()}</td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    `;
+                } else {
+                    container.innerHTML = '<div class="empty">No users yet</div>';
+                }
+            } catch (error) {
+                container.innerHTML = '<div class="empty">Error loading users</div>';
+                console.error('Error loading users:', error);
+            }
+        }
+
+        async function loadSellers() {
+            const container = document.getElementById('sellers-table');
+            container.innerHTML = '<div class="loading">Loading sellers...</div>';
+            
+            try {
+                const response = await fetch('/api/admin/sellers');
+                const data = await response.json();
+                
+                if (data.success && data.sellers.length > 0) {
+                    container.innerHTML = `
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Service</th>
+                                    <th>Category</th>
+                                    <th>Price</th>
+                                    <th>Rating</th>
+                                    <th>Orders</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${data.sellers.map(seller => `
+                                    <tr>
+                                        <td><strong>${seller.name}</strong></td>
+                                        <td>${seller.service}</td>
+                                        <td>${seller.category}</td>
+                                        <td><strong>₹${seller.price}</strong></td>
+                                        <td>⭐ ${seller.rating}/5</td>
+                                        <td>${seller.completedOrders}</td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    `;
+                } else {
+                    container.innerHTML = '<div class="empty">No sellers yet</div>';
+                }
+            } catch (error) {
+                container.innerHTML = '<div class="empty">Error loading sellers</div>';
+                console.error('Error loading sellers:', error);
+            }
+        }
+
+        // Load all data on page load
+        window.onload = () => {
+            loadStats();
+            loadOrders();
+            loadUsers();
+            loadSellers();
+        };
+
+        // Auto-refresh every 30 seconds
+        setInterval(() => {
+            loadStats();
+            loadOrders();
+        }, 30000);
+    </script>
+</body>
+</html>
