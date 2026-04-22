@@ -11,7 +11,7 @@ router.get('/stats', async (req, res) => {
     const totalUsers = await User.countDocuments();
     const totalSellers = await Seller.countDocuments();
     
-    const paidOrders = await Order.find({ status: 'paid' });
+    const paidOrders = await Order.find({ status: { $in: ['paid', 'completed'] } });
     const totalRevenue = paidOrders.reduce((sum, order) => sum + order.amount, 0);
 
     res.json({
@@ -20,7 +20,8 @@ router.get('/stats', async (req, res) => {
         totalOrders,
         totalUsers,
         totalSellers,
-        totalRevenue
+        totalRevenue,
+        paidOrders: paidOrders.length
       }
     });
   } catch (error) {

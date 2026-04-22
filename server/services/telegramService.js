@@ -30,15 +30,15 @@ class TelegramService {
    * Send welcome message to new user
    */
   async sendWelcomeMessage(chatId) {
-    const message = `👋 *Welcome to AI Marketplace!*
+    const message = `👋 *Welcome to Telegram Marketplace!*
 
-I'm your AI assistant. I can help you find:
-• Logo Design
-• Website Development
-• App Development
-• Content Writing
-• Marketing Services
-• And more!
+I'm your AI-powered assistant. I can help you find:
+• 🎨 Logo Design
+• 🌐 Website Development
+• 📱 App Development
+• ✍️ Content Writing
+• 📣 Marketing Services
+• And much more!
 
 Just tell me what you need and your budget. For example:
 _"I need a logo under ₹500"_

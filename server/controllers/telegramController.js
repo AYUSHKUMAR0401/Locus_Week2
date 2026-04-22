@@ -23,12 +23,6 @@ class TelegramController {
 
       console.log(`📱 Telegram message from ${chatId}: ${text}`);
 
-      // Handle /start command
-      if (text === '/start') {
-        await telegramService.sendWelcomeMessage(chatId);
-        return res.status(200).send('OK');
-      }
-
       // Get or create user
       let user = await User.findOne({ phone: chatId.toString() });
       if (!user) {
@@ -36,6 +30,12 @@ class TelegramController {
           phone: chatId.toString(),
           name: userName
         });
+      }
+
+      // Handle /start command
+      if (text === '/start') {
+        await telegramService.sendWelcomeMessage(chatId);
+        return res.status(200).send('OK');
       }
 
       // Save message to history
