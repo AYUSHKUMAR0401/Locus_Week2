@@ -2,8 +2,8 @@
 
 ## ✅ Your Bot is Ready!
 
-**Bot Name:** whatsapp_locus_bot  
-**Bot Link:** https://t.me/whatsapp_locus_bot  
+**Bot Name:** Telegram_locus_bot  
+**Bot Link:** https://t.me/Telegram_locus_bot  
 **Status:** ✅ Configured and ready to test!
 
 ---
@@ -35,7 +35,7 @@ You should see:
 ### Step 2: Test on Telegram
 
 1. **Open Telegram** (app or web.telegram.org)
-2. **Search for:** `@whatsapp_locus_bot`
+2. **Search for:** `@Telegram_locus_bot`
 3. **Click "Start"** or send `/start`
 
 You should get:
@@ -231,7 +231,7 @@ APP_URL=https://your-app.railway.app
 ### Step 7: Test Production Bot
 
 1. Open Telegram
-2. Search: `@whatsapp_locus_bot`
+2. Search: `@Telegram_locus_bot`
 3. Send: "I need a logo under ₹500"
 4. Bot should respond!
 
@@ -251,7 +251,7 @@ https://your-app.railway.app
 
 ### ✅ Live Bot Demo
 ```
-https://t.me/whatsapp_locus_bot
+https://t.me/Telegram_locus_bot
 ```
 
 ### ✅ Demo Instructions
@@ -261,7 +261,7 @@ Add this to your README:
 ```markdown
 ## 🤖 Try the Live Bot
 
-1. Open Telegram: https://t.me/whatsapp_locus_bot
+1. Open Telegram: https://t.me/Telegram_locus_bot
 2. Send: `/start`
 3. Try: "I need a logo under ₹500"
 4. Select option: "1"
@@ -288,7 +288,7 @@ Add this to your README:
 
 "Hi, I'm demonstrating my AI-powered marketplace bot on Telegram."
 
-**[Show bot]** `@whatsapp_locus_bot`
+**[Show bot]** `@Telegram_locus_bot`
 
 **[Send]** "I need a logo under ₹500"
 
@@ -323,14 +323,14 @@ Add this to your README:
 5. **Fully Deployed** - Live on Railway
 6. **Professional Code** - Clean architecture
 7. **$0 Cost** - Everything is free
-8. **Scalable** - Easy to add WhatsApp later
+8. **Scalable** - Easy to add Telegram later
 
 ---
 
 ## 🎯 Talking Points
 
 - "Built on Telegram for easy deployment and testing"
-- "Architecture supports WhatsApp - just swap the messaging service"
+- "Architecture supports Telegram - just swap the messaging service"
 - "Using Groq's Llama 3.1 70B for fast, accurate AI"
 - "MongoDB Atlas for scalable data storage"
 - "Complete payment flow with demo mode"
@@ -365,6 +365,6 @@ Your bot is:
 - ✅ Ready to deploy
 - ✅ Ready to win!
 
-**Test it now:** https://t.me/whatsapp_locus_bot
+**Test it now:** https://t.me/Telegram_locus_bot
 
 **Go win that hackathon!** 🏆

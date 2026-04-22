@@ -25,7 +25,7 @@ brew install mongodb-community
 brew services start mongodb-community
 
 # Update .env
-MONGODB_URI=mongodb://localhost:27017/whatsappbuisnessmarketplace
+MONGODB_URI=mongodb://localhost:27017/Telegrambuisnessmarketplace
 
 npm run seed
 npm run dev
@@ -36,7 +36,7 @@ sudo apt-get install mongodb
 sudo systemctl start mongodb
 
 # Update .env
-MONGODB_URI=mongodb://localhost:27017/whatsappbuisnessmarketplace
+MONGODB_URI=mongodb://localhost:27017/Telegrambuisnessmarketplace
 
 npm run seed
 npm run dev

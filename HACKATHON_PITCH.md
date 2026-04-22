@@ -1,4 +1,4 @@
-# 🏆 Hackathon Pitch: WhatsApp AI Marketplace
+# 🏆 Hackathon Pitch: Telegram AI Marketplace
 
 ## 🎯 The Problem (30 seconds)
 
@@ -15,22 +15,22 @@
 
 ## 💡 The Solution (45 seconds)
 
-**"What if finding and paying for services was as simple as sending a WhatsApp message?"**
+**"What if finding and paying for services was as simple as sending a Telegram message?"**
 
-Introducing **WhatsApp AI Marketplace** - where:
+Introducing **Telegram AI Marketplace** - where:
 
 ✅ Customers discover services through natural conversation  
 ✅ AI recommends the perfect match based on budget and needs  
 ✅ Payments happen instantly via Locus  
 ✅ Orders are confirmed automatically  
 
-**No apps to download. No websites to navigate. Just WhatsApp.**
+**No apps to download. No websites to navigate. Just Telegram.**
 
 ## 🎬 Live Demo (2 minutes)
 
 ### Demo Flow:
 
-**[Open WhatsApp on screen]**
+**[Open Telegram on screen]**
 
 **Me**: "Let me show you how it works..."
 
@@ -94,13 +94,13 @@ The seller will contact you shortly!
 - Matches with best sellers from database
 
 **Seamless Integration:**
-- WhatsApp API (Twilio) - 2 billion users already on it
+- Telegram API (Twilio) - 2 billion users already on it
 - Locus Payments - Instant, secure transactions
 - MongoDB - Scalable data storage
 
 **Architecture:**
 ```
-WhatsApp → AI Parser → Smart Matching → Locus Payment → Confirmation
+Telegram → AI Parser → Smart Matching → Locus Payment → Confirmation
 ```
 
 ## 💰 Market Opportunity (30 seconds)
@@ -108,7 +108,7 @@ WhatsApp → AI Parser → Smart Matching → Locus Payment → Confirmation
 **Target Market:**
 - 63 million small businesses in India
 - 95% struggle with digital payments
-- WhatsApp has 487 million users in India
+- Telegram has 487 million users in India
 
 **Revenue Model:**
 - Small commission per transaction (5-10%)
@@ -122,7 +122,7 @@ WhatsApp → AI Parser → Smart Matching → Locus Payment → Confirmation
 **1. Zero Friction**
 - No app downloads
 - No account creation
-- Everyone already uses WhatsApp
+- Everyone already uses Telegram
 
 **2. AI-Powered**
 - Not just keyword matching
@@ -158,7 +158,7 @@ WhatsApp → AI Parser → Smart Matching → Locus Payment → Confirmation
 
 ## 🎤 Closing Statement (15 seconds)
 
-**"In a world where everyone is on WhatsApp, why should finding and paying for services be complicated?"**
+**"In a world where everyone is on Telegram, why should finding and paying for services be complicated?"**
 
 **"We're making commerce as simple as a conversation."**
 
@@ -172,7 +172,7 @@ WhatsApp → AI Parser → Smart Matching → Locus Payment → Confirmation
 ```
 ┌─────────────┐
 │   User      │
-│ (WhatsApp)  │
+│ (Telegram)  │
 └──────┬──────┘
        │
 ┌──────▼──────┐
@@ -206,7 +206,7 @@ WhatsApp → AI Parser → Smart Matching → Locus Payment → Confirmation
 | Feature | Us | Traditional Marketplace | Social Media |
 |---------|----|-----------------------|--------------|
 | Discovery | AI-powered | Manual search | Random posts |
-| Platform | WhatsApp | Separate app | Multiple apps |
+| Platform | Telegram | Separate app | Multiple apps |
 | Payment | Integrated | External | Manual |
 | Friction | Minimal | High | Very high |
 
@@ -221,7 +221,7 @@ WhatsApp → AI Parser → Smart Matching → Locus Payment → Confirmation
 ## 🎯 Key Talking Points to Remember
 
 1. **Problem is real**: Small businesses struggle with digital presence
-2. **Solution is simple**: Everyone already uses WhatsApp
+2. **Solution is simple**: Everyone already uses Telegram
 3. **Technology is smart**: AI understands natural language
 4. **Integration is seamless**: Locus handles payments perfectly
 5. **Market is huge**: 63 million small businesses in India
@@ -233,16 +233,16 @@ WhatsApp → AI Parser → Smart Matching → Locus Payment → Confirmation
 A: Small commission per transaction (5-10%), premium seller listings, and featured placements.
 
 **Q: What about competition?**
-A: No one combines WhatsApp + AI + Payments in one seamless flow. We're not just a chatbot or payment gateway - we're the complete solution.
+A: No one combines Telegram + AI + Payments in one seamless flow. We're not just a chatbot or payment gateway - we're the complete solution.
 
 **Q: How do you ensure quality sellers?**
 A: Rating system, verification process, and performance monitoring. Bad sellers get removed.
 
 **Q: Can this scale?**
-A: Absolutely. WhatsApp handles billions of messages. Our architecture is built on proven technologies (Node.js, MongoDB). We can add categories and languages easily.
+A: Absolutely. Telegram handles billions of messages. Our architecture is built on proven technologies (Node.js, MongoDB). We can add categories and languages easily.
 
-**Q: Why WhatsApp and not a dedicated app?**
-A: 487 million Indians already use WhatsApp daily. Zero download friction. Familiar interface. Instant adoption.
+**Q: Why Telegram and not a dedicated app?**
+A: 487 million Indians already use Telegram daily. Zero download friction. Familiar interface. Instant adoption.
 
 **Q: How accurate is the AI?**
 A: We use OpenAI GPT-3.5 with custom prompts. 90%+ accuracy in intent parsing. Fallback to keyword matching if needed.

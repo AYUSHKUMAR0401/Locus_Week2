@@ -118,7 +118,7 @@ curl http://localhost:3000/api/test/telegram
   "message": "Telegram service working",
   "data": {
     "botToken": "Set",
-    "botUsername": "whatsapp_locus_bot",
+    "botUsername": "Telegram_locus_bot",
     "webhookInfo": {...}
   }
 }
@@ -150,7 +150,7 @@ curl http://localhost:3000/api/test/payment
 ### Test Welcome Message
 
 1. Open Telegram
-2. Search: `@whatsapp_locus_bot`
+2. Search: `@Telegram_locus_bot`
 3. Send: `/start`
 
 **Expected:**
@@ -216,7 +216,7 @@ Service: Professional Logo Design
 ### Check MongoDB Connection
 
 ```bash
-mongosh "mongodb+srv://zkupiUser:zkupiPassword123@cluster0.blbtk8l.mongodb.net/whatsappbuisnessmarketplace"
+mongosh "mongodb+srv://zkupiUser:zkupiPassword123@cluster0.blbtk8l.mongodb.net/Telegrambuisnessmarketplace"
 ```
 
 ### Check Collections

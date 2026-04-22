@@ -109,7 +109,7 @@ http://localhost:3000
   "message": "Telegram service working",
   "data": {
     "botToken": "Set",
-    "botUsername": "whatsapp_locus_bot",
+    "botUsername": "Telegram_locus_bot",
     "webhookInfo": {
       "url": "",
       "has_custom_certificate": false,
@@ -200,7 +200,7 @@ http://localhost:3000/admin
 ### Step 1: Open Bot
 
 1. Open Telegram app or web.telegram.org
-2. Search: `@whatsapp_locus_bot`
+2. Search: `@Telegram_locus_bot`
 3. Click "Start" or send `/start`
 
 **Expected:**

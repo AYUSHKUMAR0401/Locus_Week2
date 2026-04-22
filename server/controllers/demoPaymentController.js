@@ -28,7 +28,7 @@ class DemoPaymentController {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demo Payment - WhatsApp Marketplace</title>
+    <title>Demo Payment - Telegram Marketplace</title>
     <style>
         * {
             margin: 0;
@@ -202,7 +202,7 @@ class DemoPaymentController {
             <div class="info">
                 🎯 This is a demo payment page for hackathon demonstration.<br>
                 Click "Pay" to simulate successful payment.<br>
-                You'll receive confirmation on WhatsApp!
+                You'll receive confirmation on Telegram!
             </div>
         </div>
 
@@ -221,7 +221,7 @@ class DemoPaymentController {
             </div>
             <div class="info">
                 ✅ Payment processed successfully!<br>
-                Check your WhatsApp for order confirmation.<br>
+                Check your Telegram for order confirmation.<br>
                 You can close this page now.
             </div>
         </div>

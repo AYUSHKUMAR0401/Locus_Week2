@@ -1,6 +1,6 @@
 # ⚡ Quick Start Guide
 
-Get your WhatsApp AI Marketplace running in 10 minutes!
+Get your Telegram AI Marketplace running in 10 minutes!
 
 ## 🎯 Prerequisites
 
@@ -46,7 +46,7 @@ nano .env
 # Get these from https://console.twilio.com
 TWILIO_ACCOUNT_SID=ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 TWILIO_AUTH_TOKEN=your_auth_token_here
-TWILIO_WHATSAPP_NUMBER=whatsapp:+14155238886
+TWILIO_Telegram_NUMBER=Telegram:+14155238886
 ```
 
 ### 4. Get Twilio Credentials
@@ -54,8 +54,8 @@ TWILIO_WHATSAPP_NUMBER=whatsapp:+14155238886
 1. Go to https://www.twilio.com/try-twilio
 2. Sign up (free trial)
 3. Get Account SID and Auth Token from dashboard
-4. Go to Messaging → Try WhatsApp
-5. Join sandbox by texting the code to their WhatsApp number
+4. Go to Messaging → Try Telegram
+5. Join sandbox by texting the code to their Telegram number
 6. Copy credentials to `.env`
 
 ### 5. Seed Database
@@ -80,12 +80,12 @@ npm run dev
 You should see:
 ```
 🚀 Server running on port 3000
-📱 WhatsApp webhook: http://localhost:3000/webhook/whatsapp
+📱 Telegram webhook: http://localhost:3000/webhook/Telegram
 💳 Payment webhook: http://localhost:3000/webhook/payment
 ✅ MongoDB connected successfully
 ```
 
-### 7. Setup ngrok (For WhatsApp Webhooks)
+### 7. Setup ngrok (For Telegram Webhooks)
 
 **Install ngrok:**
 ```bash
@@ -103,34 +103,34 @@ ngrok http 3000
 ### 8. Configure Twilio Webhook
 
 1. Go to Twilio Console
-2. Navigate to: Messaging → Settings → WhatsApp Sandbox Settings
+2. Navigate to: Messaging → Settings → Telegram Sandbox Settings
 3. Set "When a message comes in" to:
    ```
-   https://your-ngrok-url.ngrok.io/webhook/whatsapp
+   https://your-ngrok-url.ngrok.io/webhook/Telegram
    ```
 4. Set method to **POST**
 5. Save
 
-### 9. Test on WhatsApp!
+### 9. Test on Telegram!
 
-1. Open WhatsApp
-2. Send message to your Twilio WhatsApp number
+1. Open Telegram
+2. Send message to your Twilio Telegram number
 3. Type: **"I need a logo under ₹500"**
 4. Wait for bot response (2-3 seconds)
 5. Reply with: **"1"**
 6. Click the payment link
 7. Click "Pay" button
-8. Get confirmation on WhatsApp!
+8. Get confirmation on Telegram!
 
 ## 🎉 You're Done!
 
-Your WhatsApp AI Marketplace is now running!
+Your Telegram AI Marketplace is now running!
 
 ## 🧪 Test Commands
 
 ### Check if MongoDB is running
 ```bash
-mongosh whatsapp-marketplace
+mongosh Telegram-marketplace
 db.sellers.find().pretty()
 ```
 
@@ -197,14 +197,14 @@ brew services start mongodb-community
 4. **Bot:** Sends payment link
 5. **Click:** Payment link
 6. **Click:** "Pay" button
-7. **Receive:** WhatsApp confirmation
+7. **Receive:** Telegram confirmation
 
 **Total time:** Under 60 seconds! ⚡
 
 ## 💡 Pro Tips
 
 - Keep ngrok running during demo
-- Have WhatsApp open on phone
+- Have Telegram open on phone
 - Have browser ready for payment page
 - Test the full flow before presenting
 - Be ready to explain the demo payment system
@@ -222,7 +222,7 @@ Check these files:
 Your project has:
 - ✅ Groq AI integration (fast & free)
 - ✅ Beautiful demo payment page
-- ✅ Complete WhatsApp flow
+- ✅ Complete Telegram flow
 - ✅ 10 sample sellers
 - ✅ Professional UI
 - ✅ Auto confirmations

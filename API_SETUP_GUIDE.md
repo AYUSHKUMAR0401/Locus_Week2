@@ -17,7 +17,7 @@ brew services start mongodb-community
 
 **Your connection string:**
 ```
-mongodb://localhost:27017/whatsapp-marketplace
+mongodb://localhost:27017/Telegram-marketplace
 ```
 
 ### Option B: MongoDB Atlas (Best for Production)
@@ -43,18 +43,18 @@ mongodb://localhost:27017/whatsapp-marketplace
    - Choose "Connect your application"
    - Copy the connection string
    - Replace `<password>` with your password
-   - Replace `myFirstDatabase` with `whatsapp-marketplace`
+   - Replace `myFirstDatabase` with `Telegram-marketplace`
 
 **Your connection string will look like:**
 ```
-mongodb+srv://admin:YOUR_PASSWORD@cluster0.xxxxx.mongodb.net/whatsapp-marketplace?retryWrites=true&w=majority
+mongodb+srv://admin:YOUR_PASSWORD@cluster0.xxxxx.mongodb.net/Telegram-marketplace?retryWrites=true&w=majority
 ```
 
 ✅ **Done! Save this in your .env file**
 
 ---
 
-## 2️⃣ Twilio (WhatsApp API) - FREE TRIAL
+## 2️⃣ Twilio (Telegram API) - FREE TRIAL
 
 ### Step-by-Step:
 
@@ -70,26 +70,26 @@ mongodb+srv://admin:YOUR_PASSWORD@cluster0.xxxxx.mongodb.net/whatsapp-marketplac
    - Find **Auth Token** (click to reveal)
    - **SAVE THESE!**
 
-5. **Enable WhatsApp Sandbox:**
-   - Left sidebar → "Messaging" → "Try it out" → "Send a WhatsApp message"
-   - You'll see a WhatsApp number (usually `+1 415 523 8886`)
+5. **Enable Telegram Sandbox:**
+   - Left sidebar → "Messaging" → "Try it out" → "Send a Telegram message"
+   - You'll see a Telegram number (usually `+1 415 523 8886`)
    - You'll see a code like "join abc-def"
    
 6. **Join the sandbox:**
-   - Open WhatsApp on your phone
+   - Open Telegram on your phone
    - Send message to `+1 415 523 8886`
    - Type: `join abc-def` (use YOUR code from Twilio)
    - You'll get confirmation message
 
-7. **Get your WhatsApp number:**
+7. **Get your Telegram number:**
    - It's shown on the same page
-   - Format: `whatsapp:+14155238886`
+   - Format: `Telegram:+14155238886`
 
 ### Your Twilio credentials:
 ```env
 TWILIO_ACCOUNT_SID=ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 TWILIO_AUTH_TOKEN=your_32_character_auth_token
-TWILIO_WHATSAPP_NUMBER=whatsapp:+14155238886
+TWILIO_Telegram_NUMBER=Telegram:+14155238886
 ```
 
 ### ⚠️ Important Notes:
@@ -97,7 +97,7 @@ TWILIO_WHATSAPP_NUMBER=whatsapp:+14155238886
   - Only people who join your sandbox can message
   - Messages expire after 24 hours of inactivity
   - Good for development/demo!
-- **For production:** You need to apply for WhatsApp Business API (takes 1-2 weeks)
+- **For production:** You need to apply for Telegram Business API (takes 1-2 weeks)
 
 ✅ **Done! Save these in your .env file**
 
@@ -120,7 +120,7 @@ TWILIO_WHATSAPP_NUMBER=whatsapp:+14155238886
 4. **Create API key:**
    - Go to: https://platform.openai.com/api-keys
    - Click "Create new secret key"
-   - Give it a name: "WhatsApp Marketplace"
+   - Give it a name: "Telegram Marketplace"
    - Click "Create secret key"
    - **COPY IT NOW** (you won't see it again!)
 
@@ -160,7 +160,7 @@ Locus doesn't have public signup. You need to contact them.
 2. **Find contact:** Look for "Contact Sales" or "Get Started"
 3. **Email them:** 
    - Subject: "API Access for Hackathon Project"
-   - Body: "Hi, I'm building a WhatsApp marketplace for a hackathon and would like to integrate Locus payments. Can I get sandbox API access?"
+   - Body: "Hi, I'm building a Telegram marketplace for a hackathon and would like to integrate Locus payments. Can I get sandbox API access?"
 4. **Wait for response** (might take 1-2 days)
 
 ### Option B: Use Mock Payment (For Demo/Hackathon)
@@ -182,7 +182,7 @@ LOCUS_WEBHOOK_URL=http://localhost:3000/webhook/payment
 APP_URL=http://localhost:3000
 ```
 
-2. When you get a payment link in WhatsApp, note the Order ID
+2. When you get a payment link in Telegram, note the Order ID
 
 3. Complete payment manually:
 ```bash
@@ -259,15 +259,15 @@ NODE_ENV=development
 
 # MongoDB
 # Option 1: Local
-MONGODB_URI=mongodb://localhost:27017/whatsapp-marketplace
+MONGODB_URI=mongodb://localhost:27017/Telegram-marketplace
 
 # Option 2: MongoDB Atlas
-# MONGODB_URI=mongodb+srv://admin:YOUR_PASSWORD@cluster0.xxxxx.mongodb.net/whatsapp-marketplace
+# MONGODB_URI=mongodb+srv://admin:YOUR_PASSWORD@cluster0.xxxxx.mongodb.net/Telegram-marketplace
 
-# Twilio WhatsApp
+# Twilio Telegram
 TWILIO_ACCOUNT_SID=ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 TWILIO_AUTH_TOKEN=your_32_character_auth_token
-TWILIO_WHATSAPP_NUMBER=whatsapp:+14155238886
+TWILIO_Telegram_NUMBER=Telegram:+14155238886
 
 # OpenAI
 OPENAI_API_KEY=sk-proj-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -290,7 +290,7 @@ Test each API:
 ### 1. MongoDB
 ```bash
 # If local:
-mongosh whatsapp-marketplace
+mongosh Telegram-marketplace
 
 # If Atlas:
 # Just check if connection string works when you start the app
@@ -301,8 +301,8 @@ mongosh whatsapp-marketplace
 # Send test message
 curl -X POST https://api.twilio.com/2010-04-01/Accounts/YOUR_ACCOUNT_SID/Messages.json \
   --data-urlencode "Body=Test" \
-  --data-urlencode "From=whatsapp:+14155238886" \
-  --data-urlencode "To=whatsapp:+YOUR_PHONE" \
+  --data-urlencode "From=Telegram:+14155238886" \
+  --data-urlencode "To=Telegram:+YOUR_PHONE" \
   -u YOUR_ACCOUNT_SID:YOUR_AUTH_TOKEN
 ```
 
@@ -378,11 +378,11 @@ npm run dev
 
 9. **Configure Twilio webhook:**
    - Go to Twilio Console
-   - Messaging → Settings → WhatsApp Sandbox Settings
-   - Set webhook to: `https://your-ngrok-url.ngrok.io/webhook/whatsapp`
+   - Messaging → Settings → Telegram Sandbox Settings
+   - Set webhook to: `https://your-ngrok-url.ngrok.io/webhook/Telegram`
 
-10. **Test on WhatsApp!**
-    - Send message to your Twilio WhatsApp number
+10. **Test on Telegram!**
+    - Send message to your Twilio Telegram number
     - Type: "I need a logo under ₹500"
 
 ---
@@ -415,7 +415,7 @@ npm run dev
 
 **Must Have (Do First):**
 1. ✅ MongoDB (local is fine)
-2. ✅ Twilio WhatsApp
+2. ✅ Twilio Telegram
 3. ✅ OpenAI
 4. ✅ ngrok
 

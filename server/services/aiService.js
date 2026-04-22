@@ -7,7 +7,7 @@ const groq = new Groq({
 class AIService {
   async parseUserIntent(message) {
     try {
-      const prompt = `You are an AI assistant for a WhatsApp marketplace. Parse the user's message and extract:
+      const prompt = `You are an AI assistant for a Telegram marketplace. Parse the user's message and extract:
 1. Service type (logo, website, app, content, marketing, design, other)
 2. Budget (if mentioned, extract the number)
 3. Any specific requirements

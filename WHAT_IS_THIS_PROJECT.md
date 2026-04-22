@@ -83,7 +83,7 @@ You built an **AI-powered marketplace on Telegram** where:
 ┌─────────────────────────────────────────────────────────────┐
 │                                                             │
 │  1. USER OPENS TELEGRAM                                    │
-│     Opens: @whatsapp_locus_bot                             │
+│     Opens: @Telegram_locus_bot                             │
 │                                                             │
 │  2. USER SENDS MESSAGE                                     │
 │     "I need a logo under ₹500"                             │
@@ -234,7 +234,7 @@ If you wanted to make this real:
 
 **Market Size:**
 - 63 million small businesses in India
-- 487 million WhatsApp/Telegram users
+- 487 million Telegram/Telegram users
 - Growing gig economy
 
 **Potential:**

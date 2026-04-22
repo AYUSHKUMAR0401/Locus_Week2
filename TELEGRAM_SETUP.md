@@ -199,7 +199,7 @@ Record:
 
 ## 🎯 Talking Points
 
-- "Built on Telegram for easy demo, but architecture supports WhatsApp"
+- "Built on Telegram for easy demo, but architecture supports Telegram"
 - "Using Groq AI for fast, accurate intent parsing"
 - "Complete payment flow with demo mode"
 - "Fully deployed and testable"

@@ -2,10 +2,10 @@
 
 > **A Telegram-based AI assistant that connects customers with businesses and completes transactions with integrated payments.**
 
-[![Live Bot](https://img.shields.io/badge/Try-Live%20Bot-blue?style=for-the-badge&logo=telegram)](https://t.me/whatsapp_locus_bot)
+[![Live Bot](https://img.shields.io/badge/Try-Live%20Bot-blue?style=for-the-badge&logo=telegram)](https://t.me/Telegram_locus_bot)
 [![Demo](https://img.shields.io/badge/View-Demo-green?style=for-the-badge)](http://localhost:3000)
 
-Built for hackathon with Telegram for easy deployment and testing. Architecture supports WhatsApp Business API - just swap the messaging service!
+Built for hackathon with Telegram for easy deployment and testing. Architecture supports Telegram Business API - just swap the messaging service!
 
 ---
 
@@ -54,7 +54,7 @@ npm run dev
 
 ### Test the Bot
 
-1. Open Telegram: https://t.me/whatsapp_locus_bot
+1. Open Telegram: https://t.me/Telegram_locus_bot
 2. Send: `/start`
 3. Try: "I need a logo under ₹500"
 4. Select option: "1"
@@ -102,7 +102,7 @@ chmod +x test-all.sh
 5. **Professional UI** - Beautiful landing page and payment interface
 6. **Fully Tested** - Comprehensive test suite
 7. **$0 Cost** - Everything is free
-8. **Scalable** - Easy to add WhatsApp later
+8. **Scalable** - Easy to add Telegram later
 
 ---
 
@@ -143,6 +143,6 @@ MIT
 
 ---
 
-**🚀 Try the bot:** https://t.me/whatsapp_locus_bot
+**🚀 Try the bot:** https://t.me/Telegram_locus_bot
 
 **Built with ❤️ for hackathon**

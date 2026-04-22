@@ -71,7 +71,7 @@ sudo systemctl start mongodb
 #### Update .env
 
 ```env
-MONGODB_URI=mongodb://localhost:27017/whatsappbuisnessmarketplace
+MONGODB_URI=mongodb://localhost:27017/Telegrambuisnessmarketplace
 ```
 
 #### Restart Server
@@ -181,7 +181,7 @@ For hackathon demo, local MongoDB is:
 
 Just install locally and use:
 ```env
-MONGODB_URI=mongodb://localhost:27017/whatsappbuisnessmarketplace
+MONGODB_URI=mongodb://localhost:27017/Telegrambuisnessmarketplace
 ```
 
 ---

@@ -1,10 +1,10 @@
-# 🆓 FREE Alternatives for WhatsApp Demo
+# 🆓 FREE Alternatives for Telegram Demo
 
 Since Twilio requires payment verification, here are **completely FREE** alternatives for your hackathon!
 
 ---
 
-## 🎯 Best Option: Mock WhatsApp Interface (Recommended)
+## 🎯 Best Option: Mock Telegram Interface (Recommended)
 
 ### Why This is Perfect for Hackathon:
 - ✅ **100% FREE** - No payment needed
@@ -14,8 +14,8 @@ Since Twilio requires payment verification, here are **completely FREE** alterna
 - ✅ **Judges understand** - Common for demos
 
 ### What I'll Build for You:
-A web-based WhatsApp simulator that:
-- Looks exactly like WhatsApp
+A web-based Telegram simulator that:
+- Looks exactly like Telegram
 - Shows your bot responses
 - Demonstrates the full flow
 - Works offline
@@ -23,10 +23,10 @@ A web-based WhatsApp simulator that:
 
 ---
 
-## 🎨 Option 1: Web-Based WhatsApp Simulator (BEST)
+## 🎨 Option 1: Web-Based Telegram Simulator (BEST)
 
 ### Features:
-- WhatsApp-like interface
+- Telegram-like interface
 - Real-time message simulation
 - Payment link integration
 - Complete demo flow
@@ -50,7 +50,7 @@ A web-based WhatsApp simulator that:
 
 ---
 
-## 📱 Option 2: Use Your Own WhatsApp (Manual Demo)
+## 📱 Option 2: Use Your Own Telegram (Manual Demo)
 
 ### Setup:
 1. Save your server's phone number
@@ -59,7 +59,7 @@ A web-based WhatsApp simulator that:
 4. Show the conversation flow
 
 ### Advantages:
-- ✅ Uses real WhatsApp
+- ✅ Uses real Telegram
 - ✅ No APIs needed
 - ✅ Authentic look
 
@@ -92,7 +92,7 @@ A web-based WhatsApp simulator that:
 ### Why Telegram:
 - ✅ **Completely FREE** - No payment needed
 - ✅ Easy API access
-- ✅ Similar to WhatsApp
+- ✅ Similar to Telegram
 - ✅ Better for developers
 
 ### Setup Time: 5 minutes
@@ -112,7 +112,7 @@ A web-based WhatsApp simulator that:
 - ✅ Webhook support
 
 ### Disadvantages:
-- ⚠️ Not WhatsApp (but judges will understand)
+- ⚠️ Not Telegram (but judges will understand)
 
 ---
 
@@ -121,7 +121,7 @@ A web-based WhatsApp simulator that:
 ### For Hackathon Demo:
 1. **Use Web Simulator** for main demo (looks professional)
 2. **Have Telegram Bot** as backup (shows real integration)
-3. **Explain**: "We're using WhatsApp API in production, but for demo purposes..."
+3. **Explain**: "We're using Telegram API in production, but for demo purposes..."
 
 ### Why This Wins:
 - ✅ No cost
@@ -134,9 +134,9 @@ A web-based WhatsApp simulator that:
 
 ## 🚀 What Should I Build for You?
 
-### Option A: Web WhatsApp Simulator (5 minutes)
-I'll create a beautiful WhatsApp-like interface that:
-- Looks exactly like WhatsApp Web
+### Option A: Web Telegram Simulator (5 minutes)
+I'll create a beautiful Telegram-like interface that:
+- Looks exactly like Telegram Web
 - Integrates with your backend
 - Shows real AI responses
 - Demonstrates payment flow
@@ -159,10 +159,10 @@ I'll convert your project to use Telegram:
 ## 🎯 For Your Hackathon Pitch
 
 ### What to Say:
-> "We're building for WhatsApp because it has 487 million users in India. For this demo, I'm using a simulator to show the complete flow. The integration with WhatsApp Business API is straightforward - it's just changing the messaging endpoint."
+> "We're building for Telegram because it has 487 million users in India. For this demo, I'm using a simulator to show the complete flow. The integration with Telegram Business API is straightforward - it's just changing the messaging endpoint."
 
 ### Judges Will Understand:
-- WhatsApp Business API requires approval
+- Telegram Business API requires approval
 - Demos often use simulators
 - The logic is what matters
 - You can show the architecture
@@ -176,7 +176,7 @@ I'll convert your project to use Telegram:
 | Web Simulator | FREE | 5 min | 90% | ⭐⭐⭐⭐⭐ |
 | Telegram Bot | FREE | 10 min | 95% | ⭐⭐⭐⭐⭐ |
 | Screen Recording | FREE | 30 min | 100% | ⭐⭐⭐ |
-| Manual WhatsApp | FREE | 0 min | 100% | ⭐⭐ |
+| Manual Telegram | FREE | 0 min | 100% | ⭐⭐ |
 | Real Twilio | $20+ | 15 min | 100% | ⭐⭐⭐⭐⭐ |
 
 ---
@@ -191,11 +191,11 @@ I'll convert your project to use Telegram:
 
 ### During Presentation:
 1. Show web simulator (main demo)
-2. Explain it simulates WhatsApp
+2. Explain it simulates Telegram
 3. Show real AI integration (Groq)
 4. Show real payment page
 5. Show database updates
-6. Explain production would use real WhatsApp API
+6. Explain production would use real Telegram API
 
 ### Backup Plan:
 - If web fails → Use Telegram bot
@@ -208,9 +208,9 @@ I'll convert your project to use Telegram:
 
 Tell me which option you prefer:
 
-**A) Build Web WhatsApp Simulator** (Recommended)
+**A) Build Web Telegram Simulator** (Recommended)
 - Beautiful UI
-- Looks like real WhatsApp
+- Looks like real Telegram
 - Perfect for demo
 - 5 minutes to build
 
@@ -244,7 +244,7 @@ Tell me which option you prefer:
 5. **Judges will be impressed** by your resourcefulness
 
 ### What You'll Say:
-> "I built a WhatsApp simulator for the demo, but I also integrated with Telegram to prove the concept works with real messaging platforms. In production, we'd simply switch to WhatsApp Business API - the architecture is identical."
+> "I built a Telegram simulator for the demo, but I also integrated with Telegram to prove the concept works with real messaging platforms. In production, we'd simply switch to Telegram Business API - the architecture is identical."
 
 This shows:
 - ✅ Technical capability
@@ -257,7 +257,7 @@ This shows:
 ## 🚀 Ready to Build?
 
 Just tell me:
-- **"Build web simulator"** - I'll create WhatsApp-like interface
+- **"Build web simulator"** - I'll create Telegram-like interface
 - **"Setup Telegram"** - I'll integrate Telegram bot
 - **"Do both"** - I'll build both (recommended!)
 - **"I'll pay for Twilio"** - I'll help you set it up

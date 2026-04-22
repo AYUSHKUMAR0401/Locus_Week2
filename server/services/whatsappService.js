@@ -23,7 +23,7 @@ class WhatsAppService {
       console.log(`✅ Message sent to ${to}: ${result.sid}`);
       return result;
     } catch (error) {
-      console.error('❌ WhatsApp send error:', error);
+      console.error('❌ Telegram send error:', error);
       throw error;
     }
   }

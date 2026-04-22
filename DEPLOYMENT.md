@@ -1,6 +1,6 @@
 # 🚀 Deployment Guide
 
-Complete guide to deploy your WhatsApp AI Marketplace to production.
+Complete guide to deploy your Telegram AI Marketplace to production.
 
 ## 🎯 Deployment Options
 
@@ -68,7 +68,7 @@ MONGODB_URI=mongodb://mongo:password@containers-us-west-xxx.railway.app:7439
 # Twilio
 TWILIO_ACCOUNT_SID=ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 TWILIO_AUTH_TOKEN=your_auth_token
-TWILIO_WHATSAPP_NUMBER=whatsapp:+14155238886
+TWILIO_Telegram_NUMBER=Telegram:+14155238886
 
 # OpenAI
 OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -114,7 +114,7 @@ railway run node server/scripts/seedSellers.js
 
 **Twilio:**
 1. Go to Twilio Console
-2. Update webhook URL to: `https://your-app.railway.app/webhook/whatsapp`
+2. Update webhook URL to: `https://your-app.railway.app/webhook/Telegram`
 
 **Locus:**
 1. Go to Locus Dashboard
@@ -122,7 +122,7 @@ railway run node server/scripts/seedSellers.js
 
 #### 9. Test Production
 
-Send a WhatsApp message to test the full flow!
+Send a Telegram message to test the full flow!
 
 ---
 
@@ -140,7 +140,7 @@ Send a WhatsApp message to test the full flow!
 1. Click **"New"** → **"Web Service"**
 2. Connect your GitHub repository
 3. Configure:
-   - **Name**: whatsapp-ai-marketplace
+   - **Name**: Telegram-ai-marketplace
    - **Environment**: Node
    - **Build Command**: `npm install`
    - **Start Command**: `npm start`
@@ -166,7 +166,7 @@ NODE_ENV=production
 MONGODB_URI=your_mongodb_atlas_url
 TWILIO_ACCOUNT_SID=...
 TWILIO_AUTH_TOKEN=...
-TWILIO_WHATSAPP_NUMBER=...
+TWILIO_Telegram_NUMBER=...
 OPENAI_API_KEY=...
 LOCUS_API_KEY=...
 LOCUS_API_SECRET=...
@@ -215,7 +215,7 @@ services:
       - "3000:3000"
     environment:
       - NODE_ENV=production
-      - MONGODB_URI=mongodb://mongo:27017/whatsapp-marketplace
+      - MONGODB_URI=mongodb://mongo:27017/Telegram-marketplace
     env_file:
       - .env
     depends_on:
@@ -244,8 +244,8 @@ sh get-docker.sh
 
 4. Clone repository:
 ```bash
-git clone https://github.com/yourusername/whatsapp-ai-marketplace.git
-cd whatsapp-ai-marketplace
+git clone https://github.com/yourusername/Telegram-ai-marketplace.git
+cd Telegram-ai-marketplace
 ```
 
 5. Create `.env` file with production values
@@ -340,9 +340,9 @@ railway logs  # or render logs
 
 **Test webhook:**
 ```bash
-curl -X POST https://your-app.railway.app/webhook/whatsapp \
+curl -X POST https://your-app.railway.app/webhook/Telegram \
   -H "Content-Type: application/json" \
-  -d '{"Body":"test","From":"whatsapp:+1234567890"}'
+  -d '{"Body":"test","From":"Telegram:+1234567890"}'
 ```
 
 ### Issue: Database connection timeout
@@ -360,7 +360,7 @@ curl -X POST https://your-app.railway.app/webhook/whatsapp \
 - [ ] App is accessible via URL
 - [ ] MongoDB connected successfully
 - [ ] Twilio webhook receiving messages
-- [ ] Bot responds to WhatsApp messages
+- [ ] Bot responds to Telegram messages
 - [ ] Payment flow works end-to-end
 - [ ] Locus webhook receiving payment confirmations
 - [ ] Database seeded with sellers
@@ -428,10 +428,10 @@ process.on('unhandledRejection', (reason, promise) => {
 
 ## 🎉 You're Live!
 
-Your WhatsApp AI Marketplace is now in production!
+Your Telegram AI Marketplace is now in production!
 
 **Share your demo:**
-- WhatsApp number: Your Twilio number
+- Telegram number: Your Twilio number
 - Demo message: "I need a logo under ₹500"
 
 **Monitor:**

@@ -80,7 +80,7 @@ curl http://localhost:3000/api/test/payment
 ### 4. Test Telegram Bot
 
 1. Open Telegram
-2. Search: `@whatsapp_locus_bot`
+2. Search: `@Telegram_locus_bot`
 3. Send: `/start`
 4. Send: `I need a logo under ₹500`
 5. Reply: `1`
@@ -92,7 +92,7 @@ curl http://localhost:3000/api/test/payment
 
 ```bash
 # Connect to MongoDB
-mongosh "mongodb+srv://zkupiUser:zkupiPassword123@cluster0.blbtk8l.mongodb.net/whatsappbuisnessmarketplace"
+mongosh "mongodb+srv://zkupiUser:zkupiPassword123@cluster0.blbtk8l.mongodb.net/Telegrambuisnessmarketplace"
 
 # Check collections
 show collections

@@ -1,12 +1,12 @@
 # 🛠️ Complete Setup Guide
 
-This guide will walk you through setting up the WhatsApp AI Marketplace from scratch.
+This guide will walk you through setting up the Telegram AI Marketplace from scratch.
 
 ## 📋 Prerequisites Checklist
 
 - [ ] Node.js 16+ installed
 - [ ] MongoDB installed (or MongoDB Atlas account)
-- [ ] Twilio account with WhatsApp enabled
+- [ ] Twilio account with Telegram enabled
 - [ ] OpenAI API key
 - [ ] Locus API credentials
 - [ ] ngrok (for local development)
@@ -41,7 +41,7 @@ sudo systemctl start mongodb
 
 ```bash
 # Navigate to project directory
-cd whatsapp-ai-marketplace
+cd Telegram-ai-marketplace
 
 # Install dependencies
 npm install
@@ -50,19 +50,19 @@ npm install
 cp .env.example .env
 ```
 
-### 3. Get Twilio WhatsApp Credentials
+### 3. Get Twilio Telegram Credentials
 
 1. Go to [Twilio Console](https://console.twilio.com/)
 2. Create a new account (free trial available)
-3. Navigate to **Messaging** → **Try it out** → **Send a WhatsApp message**
+3. Navigate to **Messaging** → **Try it out** → **Send a Telegram message**
 4. Follow the setup wizard
 5. Get your credentials:
    - Account SID
    - Auth Token
-   - WhatsApp number (usually `whatsapp:+14155238886` for sandbox)
+   - Telegram number (usually `Telegram:+14155238886` for sandbox)
 
 6. Join the sandbox:
-   - Send the code shown in Twilio console to the WhatsApp number
+   - Send the code shown in Twilio console to the Telegram number
    - Example: Send "join <your-code>" to +1 415 523 8886
 
 ### 4. Get OpenAI API Key
@@ -93,12 +93,12 @@ PORT=3000
 NODE_ENV=development
 
 # MongoDB
-MONGODB_URI=mongodb://localhost:27017/whatsapp-marketplace
+MONGODB_URI=mongodb://localhost:27017/Telegram-marketplace
 
-# Twilio WhatsApp
+# Twilio Telegram
 TWILIO_ACCOUNT_SID=ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 TWILIO_AUTH_TOKEN=your_auth_token_here
-TWILIO_WHATSAPP_NUMBER=whatsapp:+14155238886
+TWILIO_Telegram_NUMBER=Telegram:+14155238886
 
 # OpenAI
 OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -130,10 +130,10 @@ Copy the HTTPS URL (e.g., `https://abc123.ngrok.io`) and update:
 ### 8. Configure Twilio Webhook
 
 1. Go to Twilio Console
-2. Navigate to **Messaging** → **Settings** → **WhatsApp Sandbox Settings**
+2. Navigate to **Messaging** → **Settings** → **Telegram Sandbox Settings**
 3. Set **When a message comes in** to:
    ```
-   https://your-ngrok-url.ngrok.io/webhook/whatsapp
+   https://your-ngrok-url.ngrok.io/webhook/Telegram
    ```
 4. Set method to **POST**
 5. Save
@@ -168,7 +168,7 @@ npm run dev
 You should see:
 ```
 🚀 Server running on port 3000
-📱 WhatsApp webhook: http://localhost:3000/webhook/whatsapp
+📱 Telegram webhook: http://localhost:3000/webhook/Telegram
 💳 Payment webhook: http://localhost:3000/webhook/payment
 ✅ MongoDB connected successfully
 ```
@@ -177,8 +177,8 @@ You should see:
 
 ### Test 1: Basic Message
 
-1. Open WhatsApp
-2. Send a message to your Twilio WhatsApp number
+1. Open Telegram
+2. Send a message to your Twilio Telegram number
 3. Send: "I need a logo under ₹500"
 4. You should receive options from the bot
 
@@ -198,7 +198,7 @@ Replace `ORD1234567890` with the actual order ID from the bot message.
 
 ```bash
 # Connect to MongoDB
-mongosh whatsapp-marketplace
+mongosh Telegram-marketplace
 
 # Check users
 db.users.find().pretty()
@@ -281,7 +281,7 @@ After deployment, update:
 
 1. **Twilio Webhook**:
    ```
-   https://your-app.railway.app/webhook/whatsapp
+   https://your-app.railway.app/webhook/Telegram
    ```
 
 2. **Locus Webhook** (in Locus dashboard):
@@ -309,7 +309,7 @@ After deployment, update:
 
 ## 🎉 You're Ready!
 
-Your WhatsApp AI Marketplace is now running! Test it thoroughly before the hackathon demo.
+Your Telegram AI Marketplace is now running! Test it thoroughly before the hackathon demo.
 
 ## 📞 Need Help?
 

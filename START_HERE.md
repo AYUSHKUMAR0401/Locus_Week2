@@ -20,7 +20,7 @@ Open these URLs in your browser:
 
 ### Step 3: Test Telegram Bot
 
-1. Open: https://t.me/whatsapp_locus_bot
+1. Open: https://t.me/Telegram_locus_bot
 2. Send: `/start`
 3. Send: `I need a logo under ₹500`
 4. Reply: `1`
@@ -337,7 +337,7 @@ Your project has:
 ## 🚀 Next Steps
 
 1. **Test everything** - Run `npm test`
-2. **Test bot** - https://t.me/whatsapp_locus_bot
+2. **Test bot** - https://t.me/Telegram_locus_bot
 3. **Record demo** - 60 second video
 4. **Take screenshots** - All key screens
 5. **Deploy** - Railway or Render

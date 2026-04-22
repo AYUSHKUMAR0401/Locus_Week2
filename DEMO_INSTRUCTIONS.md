@@ -22,7 +22,7 @@ Your project now has a **complete fake payment workflow** that looks and feels r
 - User selects service → Gets payment link
 - Clicks link → Opens beautiful payment page
 - Clicks "Pay" → Simulates payment processing
-- Auto-completes → Sends WhatsApp confirmation
+- Auto-completes → Sends Telegram confirmation
 - All happens automatically!
 
 ## 🚀 How to Demo This
@@ -45,7 +45,7 @@ npm run dev
 
 ### Step 2: Test the Flow
 
-**On WhatsApp:**
+**On Telegram:**
 1. Send: "I need a logo under ₹500"
 2. Bot shows options
 3. Reply: "1"
@@ -59,12 +59,12 @@ http://localhost:3000/demo-payment?orderId=ORD1234567890&amount=499&service=Prof
 ### Step 3: Complete Payment
 
 **Option A: Click the Link (Best for Demo)**
-1. Click the payment link from WhatsApp
+1. Click the payment link from Telegram
 2. Beautiful payment page opens
 3. Click "Pay ₹499" button
 4. Watch the processing animation
 5. See success message
-6. Get WhatsApp confirmation automatically!
+6. Get Telegram confirmation automatically!
 
 **Option B: Manual Trigger (Backup)**
 ```bash
@@ -82,17 +82,17 @@ curl -X POST http://localhost:3000/demo-payment/complete \
 
 ### Setup (Before Judges Arrive)
 1. Have server running
-2. Have WhatsApp open on phone
+2. Have Telegram open on phone
 3. Have browser ready for payment page
 4. Test the flow once
 
 ### During Demo (3 minutes)
 
-**[Show WhatsApp on screen]**
+**[Show Telegram on screen]**
 
 **You:** "Let me show you how easy it is to find and pay for services..."
 
-**[Type in WhatsApp]:** "I need a logo under ₹500"
+**[Type in Telegram]:** "I need a logo under ₹500"
 
 **[Bot responds in 2-3 seconds with options]**
 
@@ -116,9 +116,9 @@ curl -X POST http://localhost:3000/demo-payment/complete \
 
 **You:** "Payment successful! And now..."
 
-**[WhatsApp notification arrives]**
+**[Telegram notification arrives]**
 
-**You:** "I get instant confirmation on WhatsApp! From discovery to payment to confirmation - all in under 60 seconds!"
+**You:** "I get instant confirmation on Telegram! From discovery to payment to confirmation - all in under 60 seconds!"
 
 ## 🎨 Payment Page Features
 
@@ -139,11 +139,11 @@ curl -X POST http://localhost:3000/demo-payment/complete \
 ### Technical Features
 - ✅ Auto-triggers webhook
 - ✅ Updates database
-- ✅ Sends WhatsApp confirmation
+- ✅ Sends Telegram confirmation
 - ✅ Error handling
 - ✅ No external dependencies
 
-## 📱 WhatsApp Confirmation Message
+## 📱 Telegram Confirmation Message
 
 After payment, user receives:
 
@@ -182,7 +182,7 @@ Thank you for using our marketplace! 🙏
    - Discovery (AI)
    - Selection (User choice)
    - Payment (Demo)
-   - Confirmation (WhatsApp)
+   - Confirmation (Telegram)
 
 ## 🔧 Troubleshooting
 
@@ -191,7 +191,7 @@ Thank you for using our marketplace! 🙏
 - Verify URL format is correct
 - Check browser console for errors
 
-### WhatsApp confirmation not received
+### Telegram confirmation not received
 - Check Twilio credentials in .env
 - Verify webhook is configured
 - Check server logs for errors
@@ -224,7 +224,7 @@ Thank you for using our marketplace! 🙏
 ### 4. Show Complete Order History
 ```bash
 # Check database
-mongosh whatsapp-marketplace
+mongosh Telegram-marketplace
 db.orders.find().pretty()
 ```
 
@@ -234,7 +234,7 @@ db.orders.find().pretty()
 2. **Professional UI** - Looks production-ready
 3. **Real Flow** - Demonstrates end-to-end transaction
 4. **AI-Powered** - Smart intent parsing with Groq
-5. **User-Friendly** - Everyone knows WhatsApp
+5. **User-Friendly** - Everyone knows Telegram
 6. **Scalable** - Easy to add real payment later
 
 ## 📊 Demo Checklist
@@ -244,10 +244,10 @@ Before your presentation:
 - [ ] Server running (`npm run dev`)
 - [ ] MongoDB running
 - [ ] Database seeded (`npm run seed`)
-- [ ] WhatsApp connected to Twilio
+- [ ] Telegram connected to Twilio
 - [ ] Tested full flow once
 - [ ] Browser ready for payment page
-- [ ] Phone ready for WhatsApp demo
+- [ ] Phone ready for Telegram demo
 - [ ] Backup plan if internet fails (screen recording)
 
 ## 🎉 You're Ready!

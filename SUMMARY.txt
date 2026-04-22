@@ -65,7 +65,7 @@
 
 Landing Page:  http://localhost:3000
 Admin Panel:   http://localhost:3000/admin
-Telegram Bot:  https://t.me/whatsapp_locus_bot
+Telegram Bot:  https://t.me/Telegram_locus_bot
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 

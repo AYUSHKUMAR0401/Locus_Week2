@@ -52,7 +52,7 @@ class WhatsAppController {
 
       res.status(200).send('OK');
     } catch (error) {
-      console.error('❌ WhatsApp webhook error:', error);
+      console.error('❌ Telegram webhook error:', error);
       res.status(500).send('Error processing message');
     }
   }
