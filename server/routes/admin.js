@@ -4,6 +4,10 @@ const User = require('../models/User');
 const Seller = require('../models/Seller');
 const Order = require('../models/Order');
 
+router.get('/', (req, res) => {
+  res.send('Admin Dashboard Working 🚀');
+});
+
 // Get dashboard stats
 router.get('/stats', async (req, res) => {
   try {
