@@ -23,19 +23,32 @@ class TelegramController {
 
       console.log(`📱 Telegram message from ${chatId}: ${text}`);
 
-      // Get or create user
-      let user = await User.findOne({ phone: chatId.toString() });
-      if (!user) {
-        user = await User.create({
-          phone: chatId.toString(),
-          name: userName
-        });
-      }
-
-      // Handle /start command
+      // Handle /start command first — no DB needed
       if (text === '/start') {
         await telegramService.sendWelcomeMessage(chatId);
+        // Try to save user but don't block on failure
+        try {
+          let user = await User.findOne({ phone: chatId.toString() });
+          if (!user) {
+            await User.create({ phone: chatId.toString(), name: userName });
+          }
+        } catch (dbErr) {
+          console.warn('⚠️ Could not save user to DB (continuing):', dbErr.message);
+        }
         return res.status(200).send('OK');
+      }
+
+      // For other messages, try to get/create user
+      let user;
+      try {
+        user = await User.findOne({ phone: chatId.toString() });
+        if (!user) {
+          user = await User.create({ phone: chatId.toString(), name: userName });
+        }
+      } catch (dbErr) {
+        console.warn('⚠️ DB unavailable, running without user record:', dbErr.message);
+        // Create a temporary in-memory user object so the bot still works
+        user = { phone: chatId.toString(), name: userName, history: [], save: async () => {} };
       }
 
       // Save message to history
@@ -66,22 +79,23 @@ class TelegramController {
     try {
       // Parse user intent using AI
       const intent = await aiService.parseUserIntent(message);
-      
       console.log('🧠 Parsed intent:', intent);
 
-      // Find matching sellers
-      const query = {
-        category: intent.service,
-        isActive: true
-      };
-
-      if (intent.budget) {
-        query.price = { $lte: intent.budget };
+      // Find matching sellers (graceful fallback if DB is down)
+      let sellers = [];
+      try {
+        const query = { category: intent.service, isActive: true };
+        if (intent.budget) query.price = { $lte: intent.budget };
+        sellers = await Seller.find(query)
+          .sort({ rating: -1, completedOrders: -1 })
+          .limit(5);
+      } catch (dbErr) {
+        console.warn('⚠️ Could not fetch sellers from DB:', dbErr.message);
+        await telegramService.sendMessage(chatId,
+          '⚠️ Database is temporarily unavailable. Please try again in a moment!'
+        );
+        return;
       }
-
-      const sellers = await Seller.find(query)
-        .sort({ rating: -1, completedOrders: -1 })
-        .limit(5);
 
       // Generate and send response
       const response = await aiService.generateResponse(sellers, intent);
