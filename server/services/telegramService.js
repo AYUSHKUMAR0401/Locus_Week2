@@ -2,9 +2,10 @@ const axios = require('axios');
 
 class TelegramService {
   constructor() {
-    this.botToken = process.env.TELEGRAM_BOT_TOKEN;
-    this.baseUrl = `https://api.telegram.org/bot${this.botToken}`;
   }
+
+  get botToken() { return process.env.TELEGRAM_BOT_TOKEN; }
+  get baseUrl()  { return `https://api.telegram.org/bot${this.botToken}`; }
 
   /**
    * Send a text message to a Telegram user

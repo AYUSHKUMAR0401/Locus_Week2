@@ -3,11 +3,12 @@ const telegramController = require('../controllers/telegramController');
 
 class TelegramPolling {
   constructor() {
-    this.botToken = process.env.TELEGRAM_BOT_TOKEN;
-    this.baseUrl = `https://api.telegram.org/bot${this.botToken}`;
     this.offset = 0;
     this.isPolling = false;
   }
+
+  get botToken() { return process.env.TELEGRAM_BOT_TOKEN; }
+  get baseUrl()  { return `https://api.telegram.org/bot${this.botToken}`; }
 
   /**
    * Start polling for updates
@@ -18,13 +19,14 @@ class TelegramPolling {
       return;
     }
 
+    if (!this.botToken || this.botToken === 'placeholder') {
+      console.error('❌ TELEGRAM_BOT_TOKEN is not set. Bot will not start.');
+      return;
+    }
+
     console.log('🔄 Starting Telegram polling...');
     this.isPolling = true;
-
-    // Delete webhook first (required for polling)
     await this.deleteWebhook();
-
-    // Start polling loop
     this.poll();
   }
 
@@ -74,8 +76,11 @@ class TelegramPolling {
         }
       } catch (error) {
         console.error('❌ Polling error:', error.message);
-        // Wait before retrying
-        await this.sleep(5000);
+        const delay = error.response?.status === 401 ? 30000 : 5000;
+        if (error.response?.status === 401) {
+          console.error('❌ Invalid bot token (401). Check TELEGRAM_BOT_TOKEN in .env');
+        }
+        await this.sleep(delay);
       }
     }
   }
